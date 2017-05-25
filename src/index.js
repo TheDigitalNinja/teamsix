@@ -66,16 +66,18 @@ var startStateHandlers = Alexa.CreateStateHandler(APP_STATES.START, {
         //speechOutput = speechOutput + '';
         repromptText = speechOutput;
         this.handler.state = APP_STATES.REMIND_REWARDS;
+        this.emit('RemindRewards', true);
        // this.emit(":askWithCard", speechOutput, repromptText, cardTitle, repromptText);
-       this.emit(":tell", speechOutput, repromptText);
+       //this.emit(":tell", speechOutput, repromptText);
     }
 });
 
 var remindRewardsStateHandlers = Alexa.CreateStateHandler(APP_STATES.REMIND_REWARDS, {
     "RemindRewards": function (newGame) {
-
+        var speechOutput = 'Dave, you clearly have you been up all night at a hackathon. But I really want to stay in your wallet. Consider all the benefits of being a capital one customer.';
+       
         // TODO -- replace boilerplate with cap one cancel stuff
-        var speechOutput = 'Are you sure you want to give up your reward advantages?';
+        speechOutput = speechOutput + ' Are you sure you want to give up your reward advantages?';
         var repromptText = speechOutput;
         // TODO -- card support
        // this.emit(":askWithCard", speechOutput, repromptText, cardTitle, repromptText);
