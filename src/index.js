@@ -66,9 +66,10 @@ var startStateHandlers = Alexa.CreateStateHandler(APP_STATES.START, {
         //speechOutput = speechOutput + '';
         repromptText = speechOutput;
         this.handler.state = APP_STATES.REMIND_REWARDS;
-        this.emit('RemindRewards', true);
+       // this.emit('RemindRewards', true);
        // this.emit(":askWithCard", speechOutput, repromptText, cardTitle, repromptText);
-       //this.emit(":tell", speechOutput, repromptText);
+      // this.emit(":tell", speechOutput);
+       this.emitWithState("RemindRewards");
     }
 });
 
