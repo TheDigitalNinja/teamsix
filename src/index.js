@@ -48,6 +48,10 @@ var newSessionHandlers = {
     'HelloWorldIntent': function () {
         this.emit(':tell', 'Hello World!')
     },
+    'closeAccount': function () {
+        this.handler.state = APP_STATES.START;
+        this.emitWithState("StartCancel", true);
+    },
     //TODO
 };
 
