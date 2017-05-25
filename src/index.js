@@ -45,6 +45,9 @@ var newSessionHandlers = {
         var speechOutput = 'Unhandled..find the developers and pay them more';
         this.emit(":ask", speechOutput, speechOutput);
     },
+    'HelloWorldIntent': function () {
+        this.emit(':tell', 'Hello World!')
+    },
     //TODO
 };
 
